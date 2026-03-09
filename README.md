@@ -46,8 +46,16 @@
 ### 方式 1：本地加载 (适用于绝大多数 AI IDE，如 Cursor, Windsurf, Cline)
 这是最简单、最直白的方式。现代 AI 助手都有读取本地上下文的强悍能力，你只需要把相应目录下的 `SKILL.md` 这个“魔法文件”作为先验知识“喂”给它即可。
 
+**第一步：克隆下载本项目到本地**
+你需要先将包含 `.md` 技能描述的项目下载到你的电脑上，可以在 IDE 的终端中执行：
+```bash
+git clone https://github.com/Haimbeau1o/leo-skill.git
+```
+下载完成后，在你的 Cursor / Windsurf 中打开你原本正在撰写论文的项目窗口。
+
+**第二步：唤起 AI 并挂载技能**
 - **对于 Cursor / Windsurf 用户**：
-  在 Chat 对话框中输入 `@` 符号，系统会弹出文件选择器。搜索并关联本项目中的 `thesis-writer/SKILL.md` 文件（视你的实际目录而定），再附上你的具体指令。
+  在 Chat 对话框中输入 `@` 符号，系统会弹出文件选择器。搜索并关联刚才下载的 `leo-skill/thesis-writer/SKILL.md` 文件，再附上你的具体指令。
   
 - **对于 Cline (VS Code 插件) 等助手**：
   可以直接提供该文档的相对或绝对路径，让它先行通读。
