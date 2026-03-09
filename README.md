@@ -1,86 +1,73 @@
+# 🎓 Leo-Skill: 计算机硕士学位论文智能工作流指南
+
+![Leo-Skill Cover](./assets/cover.png)
+
+## 📌 写在前言 (Foreword)
+
+各位计算机科学与深度学习方向的研究生们，你们好！
+
+学位论文的撰写往往是一场持久战：从开题时的茫然、相关工作调研的繁琐、到正文推导的逻辑编排，再到最后查重降重和答辩 PPT 的制作，每一步都考验着我们的精力和耐心。
+
+**Leo-Skill** 正是为此而生！这是一个专为我们学科量身定制的**全生命周期 AI Agent 工具箱**。它不是单纯的“一键生成器”，而是你最专业的“学术副驾驶”。通过合理的模块化拆解和专业 Prompt 引导，它能帮助你：
+
+- **高效重构**：将零散的实验数据和思路提炼成符合学术规范的段落。
+- **降本增效**：自动处理查重降重、AI 痕迹擦除等机械性工作。
+- **完美落幕**：在答辩前夕，一键将晦涩的 LaTeX 源码转换为结构清晰、极具表现力的答辩演示文稿。
+
+---
+
+## 🧭 工作流全景图 (Workflow)
+
+整个学术写作的生命周期被我们拆解为三个标准化、模块化的阶段。你可以随时在终端无缝调用这些能力：
+
+![Workflow Pipeline](./assets/workflow.png)
+
+### 阶段 1：📝 从 0 到 1 草拟与撰写 (`thesis-writer`)
+在这个阶段，你只需要提供你的实验数据、大概的方法思路，或者几篇核心参考文献。
+- **作用**：引导选题、生成大纲、构建“相关工作”的对比分析、辅助核心方法与实验分析的结构化写作。
+- **调用方式**：在 AI 交互界面中指出你需要帮助的章节，让 `thesis-writer` 带领你逐步完成初稿。
+
+### 阶段 2：✨ 论文质量打磨与优化 (`thesis-optimizer`)
+文章写完后查重率过高？被导师指出“AI 味儿太重”？
+- **作用**：这是一个外部的三维一体专业优化套件。它采用“总揽+章节”两级状态追踪，通过多轮迭代帮你**降 AI 率、降查重率**，并进行学术语言润色。
+- **获取方式**：请访问主页获取 [Haimbeau1o/thesis-optimizer](https://github.com/Haimbeau1o/thesis-optimizer) 套件。
+
+### 阶段 3：📊 答辩从容应对 (`latex-to-ppt`)
+论文定稿了，答辩在即，面对几十页的 LaTeX 代码无从下手？
+- **作用**：自动解析你的 `.tex` 源码，提取研究动机、模块架构（如 MV-FDE、SAM 等具体设计）、核心公式、主实验结果与消融实验。
+- **输出**：生成一份 20-30 页的结构化 Markdown 脚本。你可以直接将它粘贴到 **Gamma**、**Kimi** 或 **Beautiful.ai** 中，1分钟生成华丽的答辩 Slides。
+
+---
+
+## 🚀 核心能力如何调用？
+
+在主流的 AI IDE（例如 Cursor，Windsurf 等）或任何支持读取本地目录的 Agent 均可使用：
+
+> **💡 快速挂载指令示例**：
+> "请读取并知悉 `@[./leo-skill/thesis-writer/SKILL.md]` 中的方法论，帮我构思一下第三章的方法介绍。"
+> 
+> "请使用 `@[./leo-skill/latex-to-ppt/SKILL.md]` 提取 `@[./thesis.tex]` 的内容，为我生成答辩 PPT 的 Markdown 大纲。"
+
+**目录结构对应表**：
+| 技能名称 | 适用阶段 | 所在目录 |
+| :--- | :--- | :--- |
+| **Thesis-Writer** | 前期规划与正文撰写 | `./thesis-writer/` |
+| **LaTeX-to-PPT** | 终期答辩演示生成 | `./latex-to-ppt/` |
+| **Find-Skills** | 探索与扩展 | `./find-skills/` |
+
+---
+
+## 🌐 生态扩展：不仅仅是论文
+
+除了写作，研究生阶段你可能会遇到各种杂活：搭建个人主页、编写后端脚本、甚至处理杂乱的数据格式。
+
+为了解决这个问题，我们内置了 `find-skills` 工具。当你遇到不知道怎么处理的杂事时，可以直接询问 AI：
+> *"有没有什么 skill 可以帮我把这些实验数据图表快速生成网页？"*
+
+内置的发现引擎会帮你找到开源社区中优秀的 Agent 技能并直接应用！
+
+---
+
 <div align="center">
-  <h1>🎓 Leo-Skill: 学术论文 Agent 工具箱</h1>
-  <p>专为计算机（尤其是深度学习）硕士学位论文设计的全生命周期智能撰写、优化与答辩辅助工具箱。</p>
-  
-  [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Haimbeau1o/leo-skill/blob/main/LICENSE)
+  <i>祝大家科研顺利，顶会连中，答辩稳过！🎓</i>
 </div>
-
-## 🌟 项目概览
-
-**Leo-Skill** 是一个聚合了高品质学术类 AI Agent 技能的开源工具箱。它能够覆盖硕士学位论文的完整生命周期：从前期的选题设计、大纲规划与正文撰写，到中后期的 AI 痕迹抹除、查重优化，再到最终答辩PPT的结构化生成。
-
-本项目包含了核心的撰写与演示生成技能，并无缝链接至我们的旗舰级论文优化系统。
-
----
-
-## 🔄 最佳实践工作流 (Best Practice Workflow)
-
-通过我们提供的 Agent 生态，仅需三步即可打造高质量的学位论文：
-
-```mermaid
-graph LR
-    A[📝 thesis-writer<br>草拟与撰写] --> B[✨ thesis-optimizer<br>润色与优化]
-    B --> C[📊 latex-to-ppt<br>答辩PPT生成]
-```
-
-1. **从 0 到 1 撰写 (Drafting)**：使用 `thesis-writer` 智能生成符合规范的大纲、搜集相关工作并辅助各章节的内容填充。
-2. **论文质量打磨 (Optimization)**：使用 `thesis-optimizer` 有效降低 AI 生成检测率、降低知网/维普的查重相似度，并实现学术语气的全面润色提升。
-3. **答辩从容应对 (Presentation)**：将最终定稿的 LaTeX 源码交给 `latex-to-ppt`，一键提炼出 20-30 页结构完美的答辩 Markdown 脚本（可直接无缝导入 Gamma, Kimi, 或 Beautiful.ai 等工具）。
-
----
-
-## 📦 技能目录 (Skills Directory)
-
-本项目将各个 Agent 技能直接置于根目录，方便您的 AI 助手一键挂载读取。
-
-### 1. 📝 Thesis-Writer
-*计算机/深度学习方向硕士学位论文智能撰写系统*
-- **核心功能**：结合标准学术 LaTeX 模板生成大纲框架，辅助选题定位，开展相关工作调研梳理，并引导核心方法与实验章节的规范写作。
-- **目录位置**：[`/thesis-writer`](./thesis-writer)
-
-### 2. ✨ Thesis-Optimizer (外部旗舰套件)
-*三维一体的智能学术论文优化系统*
-- **核心功能**：专注于学术论文的后期打磨，采用“总揽+章节”两级状态追踪架构，实现“降AI率”、“降查重率”、“学术化润色”的闭环协同进化。
-- **🔗 获取指南**：作为核心专业工具，这部分能力放置于独立的专有仓库中。请访问获取：**[Haimbeau1o/thesis-optimizer](https://github.com/Haimbeau1o/thesis-optimizer)**
-
-### 3. 📊 LaTeX-to-PPT
-*从严肃的 LaTeX 论文到结构化的演示文档生成器*
-- **核心功能**：自动解析具备复杂排版的 LaTeX 手稿，提取问题动机、核心方法（公式与架构）和实验证明，归纳提炼出专为学术答辩打造的 20-30 页精炼演示脚本（Markdown 格式）。
-- **目录位置**：[`/latex-to-ppt`](./latex-to-ppt)
-
-### 4. 🔍 Find-Skills
-*生态专属技能发现与引导工具*
-- **核心功能**：辅佐主系统，帮助开发者或研究人员从浩瀚的开源 Agent 生态中探索、发现和安装其他细分领域的实用技能（如代码开发、DevOps 部署、UI 设计等）。
-- **目录位置**：[`/find-skills`](./find-skills)
-- **致谢与来源**：本工具的设计理念与实现灵感来源于 Vercel Engineering 和 ComposioHQ 的卓越开源 Agent 生态系统，特此致敬。
-
----
-
-## 🚀 安装与使用指南
-
-您可以将这些本地技能非常容易地接入到您的 AI Agent 工作流中：
-
-### 使用 Skills CLI (推荐给开发者)
-如果您的 Agent 支持标准的技能包规范协议，您可以这样引入：
-```bash
-# 安装论文撰写辅助系统
-npx skills add Haimbeau1o/leo-skill@thesis-writer
-
-# 安装答辩 PPT 转换工具
-npx skills add Haimbeau1o/leo-skill@latex-to-ppt
-```
-
-### 本地加载 (最通用方式)
-只需指令您的 AI 助手（如 Cursor、豆包、Claude 或 ChatGPT）直接读取每个技能目录下的 `SKILL.md` 文件，即可马上赋予它这方面的超级能力。
-
-```text
-# 在与 AI 的对话框中直接下发指令（示例）：
-"请首先阅读并知悉本项目 ./thesis-writer/SKILL.md 中的方法论，然后基于它的流程指导我书写论文绪论。"
-```
-
-## 🤝 参与贡献
-我们非常期待并欢迎您的提交修改、反馈问题 (Issues)或提交特性需求。
-让我们一起为科研写作效率的提升而努力！
-
----
-*Built with ❤️ for better academic research and writing efficiency.*

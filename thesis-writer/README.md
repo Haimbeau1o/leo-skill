@@ -2,7 +2,7 @@
 
 ## 简介
 
-Thesis-Writer 是一个专为计算机深度学习方向硕士论文设计的智能撰写辅助系统。系统遵循河北大学LaTeX模板规范,提供从选题到定稿的全流程支持。
+Thesis-Writer 是一个专为计算机深度学习方向硕士论文设计的智能撰写辅助系统。系统遵循[您的学校]LaTeX模板规范,提供从选题到定稿的全流程支持。
 
 ## 特性
 
@@ -10,7 +10,7 @@ Thesis-Writer 是一个专为计算机深度学习方向硕士论文设计的智
 - 🤖 **AI + 人工协作模式**: AI生成建议,用户审核确认,确保质量
 - 📚 **丰富知识库**: 大纲模板、写作指南、综述框架、降重策略等
 - 🔧 **实用工具集**: 论文搜索、格式检查、AI检测、改写助手等
-- 📖 **LaTeX模板支持**: 完全适配河北大学硕士论文模板
+- 📖 **LaTeX模板支持**: 完全适配[您的学校]硕士论文模板
 
 ## 快速开始
 
@@ -58,7 +58,7 @@ thesis-writer/
 │   ├── paraphrasing_strategies.md   # 改写策略
 │   └── review_checklist.md          # 评审标准
 └── templates/                        # 论文模板
-    └── HBUthesis/                   # 河北大学模板
+    └── YourSchool_thesis/                   # [您的学校]模板
 ```
 
 ## 工作流程
@@ -199,7 +199,7 @@ python scripts/thesis_checker.py \
 - **大纲模板** (`outline_templates.md`): 不同类型论文的标准结构
 - **写作指南** (`writing_guide.md`): 学术语言和表达技巧
 - **综述框架** (`related_work_framework.md`): 文献整理和对比方法
-- **LaTeX指南** (`latex_guide.md`): 河北大学模板使用说明
+- **LaTeX指南** (`latex_guide.md`): [您的学校]模板使用说明
 - **改写策略** (`paraphrasing_strategies.md`): 降重和去AI技巧
 - **评审标准** (`review_checklist.md`): 论文质量自查清单
 
@@ -220,7 +220,7 @@ pip install -r requirements.txt
 
 需要安装:
 - XeLaTeX编译器
-- 河北大学论文模板 (已包含在templates/目录)
+- [您的学校]论文模板 (已包含在templates/目录)
 - 中文字体: 宋体、黑体、仿宋、楷体
 
 ## 最佳实践
@@ -254,7 +254,7 @@ pip install -r requirements.txt
 
 **Q: 可以用于其他学校的论文吗?**
 
-A: 可以。虽然默认使用河北大学模板,但核心的写作流程和指导适用于所有硕士论文。只需更换LaTeX模板即可。
+A: 可以。虽然默认使用[您的学校]模板,但核心的写作流程和指导适用于所有硕士论文。只需更换LaTeX模板即可。
 
 **Q: 可以写博士论文吗?**
 
@@ -282,7 +282,7 @@ A: 系统提供专业的写作辅助,但论文质量最终取决于研究内容�
   - 实现五阶段完整流程
   - 提供辅助工具脚本
   - 建立知识库体系
-  - 适配河北大学LaTeX模板
+  - 适配[您的学校]LaTeX模板
 
 ## 贡献
 

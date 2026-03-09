@@ -1,16 +1,16 @@
 ---
 name: thesis-writer
 description: |
-  学位论文智能撰写系统,专为计算机深度学习方向硕士毕业论文设计。结合河北大学LaTeX模板规范,
+  学位论文智能撰写系统,专为计算机深度学习方向硕士毕业论文设计。结合[您的学校]LaTeX模板规范,
   提供从选题到定稿的全流程支持:论文大纲生成、章节内容填充、相关工作搜集对比、润色修改、
   去AI痕迹、查重优化等。通过渐进式交互和专业指导,帮助用户完成高质量学位论文。
   
   Intelligent thesis writing system designed for computer science deep learning master's theses.
-  Complies with Hebei University LaTeX template standards, providing full-process support from
+  Complies with [Your University] LaTeX template standards, providing full-process support from
   topic selection to final draft: outline generation, chapter content filling, related work
   collection and comparison, polishing, AI detection removal, plagiarism optimization, etc.
   
-  关键词: thesis-writing, deep-learning, latex, academic-writing, hbu-template
+  关键词: thesis-writing, deep-learning, latex, academic-writing, university-template
 ---
 
 # Thesis-Writer: 学位论文智能撰写系统
@@ -19,10 +19,10 @@ description: |
 
 **触发条件 / Trigger Conditions**:
 - 当用户需要撰写计算机深度学习方向的硕士学位论文时
-- 当用户需要基于河北大学LaTeX模板完成论文排版时
+- 当用户需要基于[您的学校]LaTeX模板完成论文排版时
 - 当用户需要系统化、专业化的论文写作指导时
 - When users need to write a master's thesis in computer science deep learning
-- When users need to complete thesis typesetting based on HBU LaTeX template
+- When users need to complete thesis typesetting based on [Your University] LaTeX template
 - When users need systematic and professional thesis writing guidance
 
 **适用场景 / Applicable Scenarios**:
@@ -43,7 +43,7 @@ description: |
 | **论文大纲生成** | LLM + 知识引导 | `references/outline_templates.md` |
 | **章节内容撰写** | LLM + 领域知识 | `references/writing_guide.md` |
 | **相关工作搜集** | 脚本辅助 + LLM分析 | `scripts/paper_search.py` + `references/related_work_framework.md` |
-| **LaTeX排版** | 脚本自动化 + 模板 | `scripts/latex_formatter.py` + HBU模板 |
+| **LaTeX排版** | 脚本自动化 + 模板 | `scripts/latex_formatter.py` + 大学模板 |
 | **去AI与降重** | LLM润色 + 脚本检测 | `scripts/ai_detector.py` + `references/paraphrasing_strategies.md` |
 | **论文评审与修改** | LLM + 评审标准 | `references/review_checklist.md` |
 
@@ -170,7 +170,7 @@ C. 多工作: 三个及以上独立工作
 
 #### 结构A: 单工作结构(传统结构)
 
-基于河北大学硕士论文结构,生成包含以下章节的大纲:
+基于[您的学校]硕士论文结构,生成包含以下章节的大纲:
 
 ```markdown
 # [论文题目]
