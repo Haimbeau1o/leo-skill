@@ -41,14 +41,28 @@
 
 ## 🚀 核心能力如何调用？
 
-在主流的 AI IDE（例如 Cursor，Windsurf 等）或任何支持读取本地目录的 Agent 均可使用：
+你可以通过以下两种方式将这些技能挂载到你的 AI Agent（如 Cursor, Windsurf, Claude Code 等）中。
+
+### 方式 1：本地加载 (最通用方式)
+这是最简单、最通用的方式。只需要让你的 AI 助手直接读取对应目录下 `SKILL.md` 这个“魔法文件”，它就会立刻掌握该项超能力：
 
 > **💡 快速挂载指令示例**：
-> "请读取并知悉 `@[./leo-skill/thesis-writer/SKILL.md]` 中的方法论，帮我构思一下第三章的方法介绍。"
+> "请首先阅读并知悉 `@[./leo-skill/thesis-writer/SKILL.md]` 中的方法论，帮我构思一下第三章的方法介绍。"
 > 
 > "请使用 `@[./leo-skill/latex-to-ppt/SKILL.md]` 提取 `@[./thesis.tex]` 的内容，为我生成答辩 PPT 的 Markdown 大纲。"
 
-**目录结构对应表**：
+### 方式 2：使用 Skills CLI (推荐给资深开发者)
+如果你的系统支持标准的 Skills CLI（例如 Claude Code），你可以通过 `npx skills` 直接作为全局能力引入：
+
+```bash
+# 安装论文撰写辅助系统
+npx skills add Haimbeau1o/leo-skill@thesis-writer
+
+# 安装答辩 PPT 转换工具
+npx skills add Haimbeau1o/leo-skill@latex-to-ppt
+```
+
+**快速索引与目录对应表**：
 | 技能名称 | 适用阶段 | 所在目录 |
 | :--- | :--- | :--- |
 | **Thesis-Writer** | 前期规划与正文撰写 | `./thesis-writer/` |
