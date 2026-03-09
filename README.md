@@ -41,25 +41,38 @@
 
 ## 🚀 核心能力如何调用？
 
-你可以通过以下两种方式将这些技能挂载到你的 AI Agent（如 Cursor, Windsurf, Claude Code 等）中。
+不同的 AI Agent 工具拥有不同的使用习惯，你可以通过以下两种主要方式将这些技能挂载到你的工作流中。
 
-### 方式 1：本地加载 (最通用方式)
-这是最简单、最通用的方式。只需要让你的 AI 助手直接读取对应目录下 `SKILL.md` 这个“魔法文件”，它就会立刻掌握该项超能力：
+### 方式 1：本地加载 (适用于绝大多数 AI IDE，如 Cursor, Windsurf, Cline)
+这是最简单、最直白的方式。现代 AI 助手都有读取本地上下文的强悍能力，你只需要把相应目录下的 `SKILL.md` 这个“魔法文件”作为先验知识“喂”给它即可。
 
-> **💡 快速挂载指令示例**：
-> "请首先阅读并知悉 `@[./leo-skill/thesis-writer/SKILL.md]` 中的方法论，帮我构思一下第三章的方法介绍。"
+- **对于 Cursor / Windsurf 用户**：
+  在 Chat 对话框中输入 `@` 符号，系统会弹出文件选择器。搜索并关联本项目中的 `thesis-writer/SKILL.md` 文件（视你的实际目录而定），再附上你的具体指令。
+  
+- **对于 Cline (VS Code 插件) 等助手**：
+  可以直接提供该文档的相对或绝对路径，让它先行通读。
+
+> **💡 经典提示词模板 (Prompt Template)**：
+> "请你首先仔细阅读并严格遵循 `@[./leo-skill/thesis-writer/SKILL.md]` 中定义的方法论与流程。当前我有一份关于【多模态融合】的实验数据，请回答我，我们现在从哪一步开始比较好？"
 > 
 > "请使用 `@[./leo-skill/latex-to-ppt/SKILL.md]` 提取 `@[./thesis.tex]` 的内容，为我生成答辩 PPT 的 Markdown 大纲。"
 
-### 方式 2：使用 Skills CLI (推荐给资深开发者)
-如果你的系统支持标准的 Skills CLI（例如 Claude Code），你可以通过 `npx skills` 直接作为全局能力引入：
+### 方式 2：使用 Skills CLI 开发包协议 (适用于 Claude Code 等生态终端)
+如果你的系统本身就是一个支持 npm 标准协议和插件市场的智能体终端（例如 Anthropic 推出的 Claude Code），你可以通过命令行将其作为“原生挂载技能”无缝引入。
 
+1. **安装技能包**：
 ```bash
 # 安装论文撰写辅助系统
 npx skills add Haimbeau1o/leo-skill@thesis-writer
 
 # 安装答辩 PPT 转换工具
 npx skills add Haimbeau1o/leo-skill@latex-to-ppt
+```
+
+2. **以原生指令调用**：
+安装完成后，只需在终端敲入 `/` 斜杠命令，即可将其作为 AI 的原生内置能力：
+```text
+/thesis-writer 帮我构思一下第三章的方法介绍
 ```
 
 **快速索引与目录对应表**：
